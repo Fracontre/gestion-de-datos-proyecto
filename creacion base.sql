@@ -1,9 +1,9 @@
 CREATE TABLE Cliente (
-    cl_RUN_Cliente VARCHAR(20) PRIMARY KEY,
-    cl_Nombre VARCHAR(100),
-    cl_Fecha_Nacimiento DATE,
-    cl_Direccion VARCHAR(255),
-    cl_Telefono VARCHAR(20)
+    cl_run_cliente VARCHAR(20) PRIMARY KEY,
+    cl_nombre VARCHAR(100),
+    cl_fecha_nacimiento DATE,
+    cl_direccion VARCHAR(255),
+    cl_telefono VARCHAR(20)
 );
 -- esto es una prueba 
 CREATE TABLE Ejecutivo_de_venta (
