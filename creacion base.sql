@@ -1,6 +1,3 @@
-CREATE DATABASE CNS;
-USE CNS;
-
 CREATE TABLE Cliente (
     cl_RUN_Cliente VARCHAR(20) PRIMARY KEY,
     Nombre VARCHAR(100),
@@ -46,47 +43,47 @@ CREATE TABLE Corporativo (
 );
 
 CREATE TABLE Cotizacion (
-    Numero_Cotizacion INT PRIMARY KEY,
-    Canal VARCHAR(50),
-    Prima DECIMAL(10, 2),
-    Fecha_Cotizacion DATE,
-    ID_Ejecutivo INT,
-    RUN_Cliente VARCHAR(20),
-    FOREIGN KEY (ID_Ejecutivo) REFERENCES Ejecutivo_de_venta(ID_Ejecutivo),
-    FOREIGN KEY (RUN_Cliente) REFERENCES Cliente(RUN_Cliente)
+    coti_Numero_Cotizacion INT PRIMARY KEY,
+    coti_Canal VARCHAR(50),
+    coti_Prima DECIMAL(10, 2),
+    coti_Fecha_Cotizacion DATE,
+    coti_ID_Ejecutivo INT, -- esto no debería existir
+    coti_RUN_Cliente VARCHAR(20), -- esto no debería existir
+    ej_ID_Ejecutivo,
+    cl_RUN_Cliente)
 );
 
 CREATE TABLE Poliza_sometida (
-    Numero_Propuesta INT PRIMARY KEY,
-    Prima DECIMAL(10, 2),
-    Estado VARCHAR(50),
-    Frecuencia_Pago VARCHAR(50),
-    Fecha_Ingreso DATE,
-    ID_Operacion INT,
+    pol_som_Numero_Propuesta INT PRIMARY KEY,
+    pol_som_Prima DECIMAL(10, 2),
+    pol_som_Estado VARCHAR(50),
+    pol_som_Frecuencia_Pago VARCHAR(50),
+    pol_som_Fecha_Ingreso DATE,
+    pol_som_ID_Operacion INT,
     FOREIGN KEY (ID_Operacion) REFERENCES Operacion(ID_operacion)
 );
 
 CREATE TABLE Poliza_emitida (
-    Numero_Poliza INT PRIMARY KEY,
-    Prima DECIMAL(10, 2),
-    Fecha_Emision DATE,
-    Frecuencia_Pago VARCHAR(50),
-    Estado_P_Emitida VARCHAR(50),
-    ID_Operacion INT,
+    pol_emi_Numero_Poliza INT PRIMARY KEY,
+    pol_emi_Prima DECIMAL(10, 2),
+    pol_emi_Fecha_Emision DATE,
+    pol_emi_Frecuencia_Pago VARCHAR(50),
+    pol_emi_Estado_P_Emitida VARCHAR(50),
+    pol_emi_ID_Operacion INT,
     FOREIGN KEY (ID_Operacion) REFERENCES Operacion(ID_operacion)
 );
 
 CREATE TABLE Operacion (
-    ID_operacion INT PRIMARY KEY,
-    Fecha_Aprobacion DATE,
-    Responsable VARCHAR(100)
+    ops_ID_operacion INT PRIMARY KEY,
+    ops_Fecha_Aprobacion DATE,
+    ops_Responsable VARCHAR(100)
 );
 
 CREATE TABLE Producto (
-    Nombre_Producto VARCHAR(100) PRIMARY KEY,
-    Tipo_Producto VARCHAR(50),
-    Beneficio VARCHAR(255),
-    Cobertura VARCHAR(255)
+    prod_Nombre_Producto VARCHAR(100) PRIMARY KEY,
+    prod_Tipo_Producto VARCHAR(50),
+    prod_Beneficio VARCHAR(255),
+    prod_Cobertura VARCHAR(255)
 );
 
 CREATE TABLE Cotizacion_producto_sometida_emitida (
