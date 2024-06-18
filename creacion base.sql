@@ -5,7 +5,7 @@ CREATE TABLE Cliente (
     Direccion VARCHAR(255),
     Telefono VARCHAR(20)
 );
-
+-- esto es una prueba 
 CREATE TABLE Ejecutivo_de_venta (
     ID_Ejecutivo INT PRIMARY KEY,
     RUN VARCHAR(20),
