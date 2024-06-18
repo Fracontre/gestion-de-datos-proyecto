@@ -1,5 +1,5 @@
 CREATE TABLE Cliente (
-    RUN_Cliente VARCHAR(20) PRIMARY KEY,
+    cl_RUN_Cliente VARCHAR(20) PRIMARY KEY,
     Nombre VARCHAR(100),
     Fecha_Nacimiento DATE,
     Direccion VARCHAR(255),
