@@ -94,3 +94,4 @@ CREATE TABLE Cotizacion_producto_sometida_emitida (
     FOREIGN KEY (Numero_Propuesta) REFERENCES Poliza_sometida(Numero_Propuesta),
     FOREIGN KEY (Numero_Poliza) REFERENCES Poliza_emitida(Numero_Poliza)
 );
+-- este es Felipe editanto
