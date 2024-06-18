@@ -1,41 +1,36 @@
-CREATE DATABASE CNS;
-USE CNS;
-
 CREATE TABLE Cliente (
     cl_RUN_Cliente VARCHAR(20) PRIMARY KEY,
-    Nombre VARCHAR(100),
-    Fecha_Nacimiento DATE,
-    Direccion VARCHAR(255),
-    Telefono VARCHAR(20),
-    Cosa nueva Char(5)
+    cl_Nombre VARCHAR(100),
+    cl_Fecha_Nacimiento DATE,
+    cl_Direccion VARCHAR(255),
+    cl_Telefono VARCHAR(20)
 );
 -- esto es una prueba 
 CREATE TABLE Ejecutivo_de_venta (
-    ID_Ejecutivo INT PRIMARY KEY,
-    RUN VARCHAR(20),
-    Nombre VARCHAR(100),
-    Fecha_de_Ingreso DATE,
-    Vigencia BOOLEAN,
-    Tipo_de_contrato VARCHAR(50),
-    ID_Agencia INT,
-    FOREIGN KEY (ID_Agencia) REFERENCES Agencia(ID_Agencia)
+    ej_id_ejecutivo INT PRIMARY KEY,
+    el_run VARCHAR(20),
+    ej_nombre VARCHAR(100),
+    ej_fecha_de_ingreso DATE,
+    ej_vigencia BOOLEAN,
+    ej_tipo_de_contrato VARCHAR(50),
+    ej_id_agencia INT,
 );
 
 CREATE TABLE Agencia (
-    ID_Agencia INT PRIMARY KEY,
-    Metas_Agencia DECIMAL(10, 2),
-    ID_Jefatura INT,
-    Fecha_de_inicio_agencia DATE,
-    Tipo_de_agencia VARCHAR(50),
-    FOREIGN KEY (ID_Jefatura) REFERENCES Jefe_de_ventas(ID_Jefatura)
+    ag_id_agencia INT PRIMARY KEY,
+    ag_metas_agencia DECIMAL(10, 2),
+    ag_id_jefatura INT,
+    ag_fecha_de_inicio_agencia DATE,
+    ag_tipo_de_agencia VARCHAR(50),
+    ag_id_jefatura
 );
 
 CREATE TABLE Jefe_de_ventas (
-    ID_Jefatura INT PRIMARY KEY,
-    Nombre_Jefe VARCHAR(100),
-    Fecha_de_ingreso DATE,
-    ID_Corporativo INT,
-    FOREIGN KEY (ID_Corporativo) REFERENCES Corporativo(ID_Corporativo)
+    jv_id_jefatura INT PRIMARY KEY,
+    jv_nombre_jefe VARCHAR(100),
+    jv_fecha_de_ingreso DATE,
+    jv_id_corporativo INT,
+    jv_id_corporativo
 );
 
 CREATE TABLE Corporativo (
