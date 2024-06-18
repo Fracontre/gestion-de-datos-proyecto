@@ -3,7 +3,8 @@ CREATE TABLE Cliente (
     Nombre VARCHAR(100),
     Fecha_Nacimiento DATE,
     Direccion VARCHAR(255),
-    Telefono VARCHAR(20)
+    Telefono VARCHAR(20),
+    Cosa nueva Char(5)
 );
 -- esto es una prueba 
 CREATE TABLE Ejecutivo_de_venta (
